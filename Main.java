@@ -23,7 +23,7 @@ public class Main {
         fillBoard(playerBoard2);
 
         try (Scanner scanner = new Scanner(System.in)) {
-            // Set up ships here as per your previous code
+            // Set up ships
                   int[] shipSizes = new int[]{5, 4, 3, 3, 2};
             String[] shipNames = new String[]{"Aircraft Carrier", "Battleship", "Submarine", "Cruiser", "Destroyer"};
 
@@ -49,7 +49,7 @@ public class Main {
                         endCol = tempCol;
                     }
             
-                    // For this simplified version, assume that the input is always valid and ships are placed vertically or horizontally
+                    // Input Code
                     if ((Math.abs(endRow - startRow) + 1 == shipSizes[i] && startCol == endCol) || 
                         (Math.abs(endCol - startCol) + 1 == shipSizes[i] && startRow == endRow)) {
                         if (canPlaceShip(startRow, startCol, endRow, endCol)) {
@@ -93,7 +93,7 @@ public class Main {
                         endCol = tempCol;
                     }
             
-                    // For this simplified version, assume that the input is always valid and ships are placed vertically or horizontally
+                   // Valid Placement check
                     if ((Math.abs(endRow - startRow) + 1 == shipSizes[i] && startCol == endCol) || 
                         (Math.abs(endCol - startCol) + 1 == shipSizes[i] && startRow == endRow)) {
                         if (canPlaceShip(startRow, startCol, endRow, endCol)) {
@@ -121,7 +121,7 @@ public class Main {
         // The game starts!
         System.out.println("The game starts!");
 
-        // Take shots until game ends (for simplicity, this code does not have a game end condition)
+        // Take shots until game ends
         while (true) {
             System.out.println("Player 1's turn to shoot!");
             printBoard(playerBoard);
@@ -204,7 +204,7 @@ public class Main {
                     takeShot(targetBoard, playerViewBoard);
                     return;
                 }
-                // Update the cell based on whether it's a hit or a miss
+                // Update the based on whether it's a hit or a miss
                 if (targetBoard[shotRow][shotCol] == SHIP_CELL) {
                     playerViewBoard[shotRow][shotCol] = HIT_CELL;
                     targetBoard[shotRow][shotCol] = HIT_CELL;
